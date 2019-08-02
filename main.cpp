@@ -397,7 +397,8 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"pivx.seed.fuzzbawls.pw", "pivx.seed2.fuzzbawls.pw", "coin-server.com", "s3v3nh4cks.ddns.net", "178.254.23.111", "188.165.212.82", ""};
+static const string mainnet_seeds[] = {"185.86.77.128", "194.9.70.216", "5.181.50.203", "62.171.146.167", "85.217.170.99", "62.171.177.211",
+                                       "62.171.147.40", "89.107.61.48", "199.247.14.30", "95.179.209.111", "54.38.186.21",""};
 static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
