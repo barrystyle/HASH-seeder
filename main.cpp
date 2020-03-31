@@ -398,7 +398,7 @@ extern "C" void* ThreadStats(void*) {
     if(spin==3)printf("  \\  ");
     if(spin==4)printf("  |  ");
     spin++;
-    Sleep(333);
+    Sleep(1000);
   } while(1);
   return nullptr;
 }
@@ -409,9 +409,7 @@ static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
-  if (!fTestNet){
-    db.Add(CService("188.165.212.82", 51472), true);
-  }
+  db.Add(CService("95.179.165.19", 40000), true);
   do {
     for (int i=0; seeds[i] != ""; i++) {
       vector<CNetAddr> ips;
