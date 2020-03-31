@@ -392,7 +392,13 @@ extern "C" void* ThreadStats(void*) {
       queries += dnsThread[i]->dbQueries;
     }
     printf("%s %i/%i available (%i tried in %is, %i new, %i active), %i banned; %llu DNS requests, %llu db queries", c, stats.nGood, stats.nAvail, stats.nTracked, stats.nAge, stats.nNew, stats.nAvail - stats.nTracked - stats.nNew, stats.nBanned, (unsigned long long)requests, (unsigned long long)queries);
-    Sleep(1000);
+    if(spin>4)spin=1;
+    if(spin==1)printf("  /  ");
+    if(spin==2)printf("  -  ");
+    if(spin==3)printf("  \\  ");
+    if(spin==4)printf("  |  ");
+    spin++;
+    Sleep(333);
   } while(1);
   return nullptr;
 }
